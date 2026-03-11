@@ -44,3 +44,15 @@ async def set_state(request: Request):
         return JSONResponse(content={"status": "error", "message": str(e)})
 
     return {"status": "success", "state": state}
+
+@app.get("/get")
+async def get_state():
+    try:
+        # Get the last command sent
+        last_command = collection.find().sort("_id", -1).limit(1)
+        state = "OFF"
+        for cmd in last_command:
+            state = cmd.get("state", "OFF")
+        return {"status": "success", "state": state}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
