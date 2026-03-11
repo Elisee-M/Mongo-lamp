@@ -1,0 +1,22 @@
+<button onclick="on()">ON</button>
+<button onclick="off()">OFF</button>
+
+<script>
+
+function on(){
+fetch("http://YOUR_IP:8000/set",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({state:"ON"})
+})
+}
+
+function off(){
+fetch("http://YOUR_IP:8000/set",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({state:"OFF"})
+})
+}
+
+</script>

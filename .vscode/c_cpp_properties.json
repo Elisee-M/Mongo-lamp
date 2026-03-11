@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "ESP32",
+            "includePath": [
+                "C:/Users/ESSA/Documents/Arduino/libraries/**",
+
+                "C:/Users/ESSA/AppData/Local/Arduino15/packages/esp32/hardware/esp32/3.3.7/**",
+
+                "C:/Users/ESSA/AppData/Local/Arduino15/packages/esp32/hardware/esp32/3.3.7/cores/esp32",
+
+                "C:/Users/ESSA/AppData/Local/Arduino15/packages/esp32/hardware/esp32/3.3.7/variants/**",
+
+                "C:/Users/ESSA/AppData/Local/Arduino15/packages/esp32/tools/**"
+            ],
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
