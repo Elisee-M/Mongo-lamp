@@ -1,8 +1,19 @@
 from fastapi import FastAPI, Request
-from pymongo import MongoClient
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from pymongo import MongoClient
 
 app = FastAPI()
+
+# ------------------ CORS Setup ------------------
+origins = ["*"]  # Allow all origins, can restrict to your IP later
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],  # allow POST, GET, OPTIONS...
+    allow_headers=["*"],
+)
 
 # ------------------ MongoDB ------------------
 try:
