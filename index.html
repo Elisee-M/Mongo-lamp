@@ -2,21 +2,21 @@
 <button onclick="off()">OFF</button>
 
 <script>
+const server_url = "http://127.0.0.1:8000"; // change if needed
 
-function on(){
-fetch("http://YOUR_IP:8000/set",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({state:"ON"})
-})
+function on() {
+  fetch(`${server_url}/set`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ state: "ON" })
+  });
 }
 
-function off(){
-fetch("http://YOUR_IP:8000/set",{
-method:"POST",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify({state:"OFF"})
-})
+function off() {
+  fetch(`${server_url}/set`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ state: "OFF" })
+  });
 }
-
 </script>
